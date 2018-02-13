@@ -22,17 +22,13 @@ try:
         aleat= random.randint(1,1000)
         recvSocket.send(bytes("HTTP/1.1 200 OK\r\n\r\n" +
                         '<html><title>URLs Aleatorias</title>' +
-                        #b"<p>And in particular hello to you, " +
-				#debuelve una tupla con el puerto del otro lado address..
 						'</body>hola. ' +
 						 '<a href= "http://localhost:1234/' +
-						str(siguiente_url) + 
+						str(aleat) + 
                         '">Dame otra</a>' +
-			#b"<img src='http://2.bp.blogspot.com/_63jCiXixFMk/R8xviDmjAII/AAAAAAAAAGQ/vgU_rFcyVO0/S1600-R/gsyc.jpg' alt='gsyc'>"
                         "</body></html>" +
                         '\r\n', 'utf-8'))
         recvSocket.close()
-#en cualquiermomento que le de cotnral c me saldra esta interrupcion 
 except KeyboardInterrupt:
     print("Closing binded socket")
     mySocket.close()
